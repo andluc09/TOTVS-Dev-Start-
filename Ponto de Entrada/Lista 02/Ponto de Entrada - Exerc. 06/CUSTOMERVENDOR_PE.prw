@@ -23,7 +23,7 @@ User Function CUSTOMERVENDOR()
 
     endif
 
-    if (INCLUI .OR. ALTERA) .AND. (cIdPonto == 'FORMLINEPOS')
+    if (INCLUI .OR. ALTERA) .AND. (cIdPonto == 'FORMPOS')
         if ExistBlock('ValidCadast')
             ExecBlock('ValidCadast', .F., .F.)
         endif

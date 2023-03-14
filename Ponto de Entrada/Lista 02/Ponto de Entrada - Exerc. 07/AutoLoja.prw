@@ -12,8 +12,7 @@ User Function AutoLoja()
     Local oObj    := PARAMIXB
     Local oView   := NIL
 
-    oObj  := FWModelActive()
-    oObj:GetModel('SA2MASTER'):LoadValue('A2_LOJA', nNum)
+    oObj:GetModel('SA2MASTER'):LoadValue('A2_LOJA', cValToChar(nNum)) //Instancia modelo ativo SA2
     oView := FWViewActive()
     oView:Refresh() 
 

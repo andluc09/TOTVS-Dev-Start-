@@ -23,9 +23,9 @@ User Function CUSTOMERVENDOR()
 
     endif
 
-    if (INCLUI) .AND. (cIdPonto == 'MODELVLDACTIVE')
+    if (INCLUI) .AND. (cIdPonto == 'BUTTONBAR')
         if ExistBlock('AutoLoja')
-            ExecBlock('AutoLoja', .F., .F., aParam[1])
+            ExecBlock('AutoLoja', .F., .F., oObj)
         endif
     endif
 

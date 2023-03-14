@@ -18,4 +18,4 @@ User Function ConfExcl()
         Help(NIL, NIL, "Exclusão Cancelada", NIL, "Exclusão foi cancelada pelo usuário!", 1, 0)       
     endif
 
-Return 
+Return lDecisao
