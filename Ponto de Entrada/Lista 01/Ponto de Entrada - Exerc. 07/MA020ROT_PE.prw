@@ -1,12 +1,15 @@
 #INCLUDE 'TOTVS.CH'
 
+/*/{Protheus.doc} User Function MA020ROT
+    Lista 01: Pontos de Entrada - Exercício 07
+    @type  Function
+    @author André Lucas M. Santos
+    @since 15/03/2023
+    @version 0.1
+    @see https://tdn.totvs.com/display/public/PROT/Pontos+de+Entrada
+/*/
+
 User Function MA020ROT()
-
-/*/
-    André Lucas M. Santos
-
-    Exercício 1 - Lista: Pontos de Entrada
-/*/
 
     Local aRotUser := {}
     //Define Array contendo as Rotinas a executar do programa     
