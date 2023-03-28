@@ -11,7 +11,7 @@
 
 User Function DiaSemana()
 
-    Local aSemana := {'Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta'}
+    Local aSemana := {'Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'}
     Local nNum    := 0
 
     cNum := FWInputBox("Insira um número: ", cNum)
