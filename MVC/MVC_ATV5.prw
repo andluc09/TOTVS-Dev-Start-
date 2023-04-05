@@ -1,7 +1,7 @@
 #INCLUDE 'TOTVS.CH'
 #INCLUDE 'FWMVCDEF.CH'
 
-/*/{Protheus.doc} User Function MVC_ATV2
+/*/{Protheus.doc} User Function MVC_ATV5
     MVC | Atividade 05 - Lista 08
     @type  Function
     @author André Lucas M. Santos
