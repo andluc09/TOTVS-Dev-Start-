@@ -46,7 +46,7 @@ Static Function ModelDef()
     Local oStruZZ3  := FWFormStruct(1, 'ZZ3')
     Local oStruZZ4  := FWFormStruct(1, 'ZZ4')
 
-    oModel:AddFields('ZZ1MASTER', /*OWNER –> PAI*/, oStruZZ1) 
+    oModel:AddFields('ZZ1MASTER', /*OWNER –> PAI*/, oStruZZ1) //? PAI MODEL
 
     oModel:AddGrid('ZZ3DETAIL', 'ZZ1MASTER', oStruZZ3)
     oModel:AddGrid('ZZ4DETAIL', 'ZZ3DETAIL', oStruZZ4)
@@ -59,9 +59,9 @@ Static Function ModelDef()
 
     oModel:GetModel('ZZ4DETAIL'):SetDescription('Cadastro de Alunos') 
 
-    oModel:SetRelation('ZZ3DETAIL', {{'ZZ3_FILIAL', 'xFilial("ZZ3")'},{'ZZ3_CATEG', 'ZZ1_SIGLA'}}, ZZ3->(IndexKey(1)))
+    oModel:SetRelation('ZZ3DETAIL', {{'ZZ3_FILIAL', 'xFilial("ZZ3")'},{'ZZ3_CATEG', 'ZZ1_SIGLA'}}, ZZ3->(IndexKey(1))) //? FILHO MODEL
 
-    oModel:SetRelation('ZZ4DETAIL', {{'ZZ4_FILIAL', 'xFilial("ZZ4")'},{'ZZ4_CODINS', 'ZZ3_COD'}}, ZZ4->(IndexKey(1)))
+    oModel:SetRelation('ZZ4DETAIL', {{'ZZ4_FILIAL', 'xFilial("ZZ4")'},{'ZZ4_CODINS', 'ZZ3_COD'}}, ZZ4->(IndexKey(1))) //? NETO MODEL
 
     oModel:SetPrimaryKey({'ZZ1_COD', 'Z3_COD', 'Z4_COD'})
 
@@ -86,9 +86,9 @@ Static Function ViewDef()
     oView:CreateHorizontalBox('Cadastro de Instrutor', 30)
     oView:CreateHorizontalBox('Cadastro de Alunos', 30)
 
-    oView:SetOwnerView('VIEW_ZZ1', 'Formulário - Categorias de CNH') 
-    oView:SetOwnerView('VIEW_ZZ3', 'Cadastro de Instrutor') 
-    oView:SetOwnerView('VIEW_ZZ4', 'Cadastro de Alunos') 
+    oView:SetOwnerView('VIEW_ZZ1', 'Formulário - Categorias de CNH') //* PAI VIEW 
+    oView:SetOwnerView('VIEW_ZZ3', 'Cadastro de Instrutor') //* FILHO VIEW
+    oView:SetOwnerView('VIEW_ZZ4', 'Cadastro de Alunos') //* NETO VIEW
 
     oView:EnableTitleView('VIEW_ZZ1', 'Categorias de CNH')
     oView:EnableTitleView('VIEW_ZZ3', 'Instrutor da Categoria')
