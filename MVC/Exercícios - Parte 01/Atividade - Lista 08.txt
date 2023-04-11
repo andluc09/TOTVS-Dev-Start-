@@ -1,0 +1,87 @@
+
+o Cadastrar as Categorias de CNH; (INCLUIR / ALTERAR / EXCLUIR) [OK]
+
+	TABELA DO PROTHEUS: ZZ1
+	ZZ1_COD    o Obrigatório + Sequencial + char + Tamanho: 5 –> Código (O Código deve ser sequencial e automático, não permitindo alteração) [OK]
+	ZZ1_SIGLA  o Obrigatório + contem 1 ou 3 char + Tamanho: 3 –> Sigla (A sigla deve conter 1 OU 3 caracteres) [OK]
+	ZZ1_DESC   o NÃO obrigatório + char + Tamanho: 500 –> Descrição (Apenas a descrição da Categoria NÃO é obrigatória) [OK]
+	ZZ1_CODVL  o Obrigatório (Campo depedente) Amarração + Tamanho: 8 –> Código do Veículo Usado nas Aulas (O Código do veículo deve existir no cadastro de veículos) [Chamar a Tabela] –> ("Consulta Padrão") [OK]
+	ZZ1_NOMEVL o Obrigatório (Gatilho: Trigger) Campo desencadeador: Código do Veículo + Tamanho: 35 –> Nome do Veículo Usado nas Aulas (O Nome do veículo deve ser preenchido automaticamente ao selecionar/digitar o código do veículo.) [OK]
+
+	MVC: Conteúdo do Browse:
+	Colunas:
+	▪ Cód. Categoria | Sigla Categoria | Nome Veículo [OK]
+
+o Cadastrar os Veículos da Auto Escola; (INCLUIR / ALTERAR / EXCLUIR) [OK]
+
+	TABELA DO PROTHEUS: ZZ2
+	ZZ2_COD    o Obrigatório + char + Tamanho: 8 –> Código [OK] 
+	ZZ2_NOME   o Obrigatório + char + Tamanho: 35 –> Nome [OK]
+	ZZ2_COR    o NÃO obrigatório + char + Tamanho: 20 –> Cor (Apenas a Cor do Veículo NÃO é obrigatória.) [OK]
+	ZZ2_PLACA  o Obrigatório + char + Tamanho: 8 (contém mascára) –> Placa (Pode ser gerado no 4Devs) [OK]
+	ZZ2_CAMBIO o Obrigatório + Lista/Combo com duas opções (Manual e Automático) –> Câmbio (Lista/Combo com opções: Manual/Automático) [OK]
+
+	MVC: Conteúdo do Browse:
+	Colunas:
+	▪ Código | Nome | Placa | Câmbio [OK]
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+o Cadastrar os Instrutores; (INCLUIR / ALTERAR / EXCLUIR / EXCLUIR MARCADORES) {porque se trata de pessoas} Mark
+
+	TABELA DO PROTHEUS: ZZ3
+	ZZ3_COD    o Obrigatório + char + Tamanho: 7 –> Código [OK]
+	ZZ3_NOME   o Obrigatório + char + Tamanho: 35 –> Nome [OK]
+	ZZ3_DTNASC o Obrigatório + data –> Data de Nascimento [OK]
+	ZZ3_DTHABL o Obrigatório + data –> Data da 1ª habilitação [OK]
+	ZZ3_ESCOL  o Obrigatório + Lista/Combo –> Escolaridade (Lista/Combo com: Ensino Fundamental, Ensino Médio, Ensino Superior) [OK]
+	ZZ3_CATEG  o Obrigatório + char + Tamanho: 3 –> Categoria em que é Instrutor (Selecionar das existentes) [Chamar a Tabela] –> ("Consulta Padrão") [OK]
+	ZZ3_QTDALU o NÃO Obrigatório + NÃO Editável + num + Tamanho: 1 –> Quantidade de Alunos (Apenas o campo Quantidade de Alunos não é obrigatório. | O campo Quantidade de Alunos não pode ser editado, pois será preenchido automaticamente em outro momento.)
+
+	Para o cadastro poder ser realizado o Instrutor deverá: [Regras de negócio]
+		▪ 1 – Estar habilitado há 2 anos, no mínimo OK
+		▪ 2 – Ter atingido a maioridade (21 anos) OK
+		▪ 3 – Ter concluído o Ensino Médio OK
+	▪ Obs: Se o instrutor tiver ao menos 1 aluno não poderá ser excluído. OK
+
+	MVC: Conteúdo do Browse:
+	Colunas:
+	▪ Código | Nome | Cat. Aula | Qtd. Alunos [OK]
+
+o Cadastrar os Alunos; (INCLUIR / ALTERAR / EXCLUIR / EXCLUIR MARCADORES) {porque se trata de pessoas} Mark
+
+	TABELA DO PROTHEUS: ZZ4
+	ZZ4_COD    o Obrigatório + Sequencial + char + Tamanho: 6 –> Código (O Código deve ser sequencial e automático, não permitindo alteração.) [OK]
+	ZZ4_NOME   o Obrigatótio + char + Tamanho: 35 –> Nome [OK]
+	ZZ4_DTNASC o Obrigatório + data –> Data de Nascimento [OK]
+	ZZ4_CPF    o Obrigatório + char + Tamanho: 14 (contém mascára) –> CPF (Pode ser gerado no 4Devs) [OK]
+	ZZ4_CODINS o Obrigatório + char + Tamanho: 7 –> Código do Instrutor (Selecionar existente) [Chamar Tabela] –> ("Consulta Padrão") [OK]
+	ZZ4_NOMINS o Obrigatório + char + Tamanho: 35 –> Nome do Instrutor (Só poderá selecionar instrutor com menos de 5 alunos, ou seja, cada instrutor pode ter até 5 alunos.) [Validação] [OK]
+	ZZ4_AULAS  o Obrigatório + Lista/Combo –> Realizando Aulas? (Lista/Combo: Sim/Não) (o [{Campo}] “Realizando Aulas” só poderá ficar com “Sim” se instrutor selecionado tiver menos de 5 alunos | O campo “Realizando Aulas?” só poderá ficar com “Sim” se o campo do Instrutor não estiver em branco) [Validação de campo] [OK]
+
+	TODOS os campos são obrigatórios:  [Regras de negócio]
+		▪ Ao incluir um cadastro de aluno, incrementar a quantidade de alunos do instrutor selecionado. OK
+		▪ Ao excluir um cadastro de aluno, decrementar a quantidade de alunos do instrutor selecionado para o aluno excluído. OK
+	▪ Obs: Se o aluno estiver Realizando Aulas não poderá ser excluído. OK
+
+	MVC: Conteúdo do Browse:
+	Colunas:
+	▪ Código | Nome | Nome Instrutor [OK]
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+o Visualizar as Categorias com seus Instrutores e os Alunos de cada Instrutor. (VISUALIZAR)
+	
+	PAIxFILHOxNETO, onde:
+	o Pai: Cadastro de Categoria OK
+	o Filho: Instrutor(es) da categoria selecionada OK
+	o Neto: Aluno(os) do instrutor selecionado OK
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+	
+	1º Passo: Ler e interpretar o exercício										 OK
+	2º Passo: Desenhar a solução (Bloco de Notas)									 OK
+	3º Passo: Cadastrar Tabelas e Consultas Padrão no Protheus							 OK
+	4º Passo: Criar chamada de fonte pelo Menu do Protheus								 OK
+	5º Passo: Criar o Fonte responsável pelas interações específicadas quanto ao MVC: M (model) e a V (view), apenas OK
+	6º Passo: Testar as interações quanto a aplicabilidade do fonte no Protheus 					 OK
+	7º Passo: Polir detalhes do fonte ou verificar as boas práticas na prática!					 OK
+	8º Passo: Subir no GitHub no diretório específico do DEV START 							 OK
+	9º Passo: Compartilhar link na Atividade do Classroom relacionada a Lista 					 OK
