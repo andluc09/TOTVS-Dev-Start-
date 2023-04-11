@@ -1,0 +1,27 @@
+
+o Tabela ZZAP
+
+	Apartamentos:
+	ZAP_COD		Obrigatório + Sequencial + char + Tamanho 5 [OK]
+	ZAP_NOPR	Obrigatório + char + Tamanho 35 [OK]
+	ZAP_CPF		Obrigatório + char + Tamanho 14 (contém mascára) [OK]
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+o Tabela ZBL
+
+	Blocos:
+	ZBL_COD		Obrigatório + Sequencial + char + Tamanho 6 [OK]
+	ZBL_CAP		Obrigatório + Selecionar existente [Consulta Padrão] + char + Tamanho 5 [OK]
+	ZBL_NAP		NÃO Obrigatório + NÃO Editável + char + Tamanho 35 [Gatilho] [OK]
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+BLOCO > APARTAMENTO > PROPRIETÁRIO (Relacionamento)
+
+	Dividem: ZBL_CAP == ZAP_COD
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+PAI x FILHO – INCLUIR / ALTERAR / VISUALIZAR / EXCLUIR / EXCLUIR MARCADORES (MarkBrowse)
+
+	Colunas Browse:
+	▪ Código Apartamento | Nome do Proprietário
+	
