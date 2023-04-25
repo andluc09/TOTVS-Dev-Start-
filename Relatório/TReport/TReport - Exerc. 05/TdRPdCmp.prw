@@ -34,10 +34,10 @@ Static Function GeraReport()
     Local oSection2 := NIL 
 
     //? Criando o objeto do RELATÓRIO (Folha de papel)
-    oRel:= TReport():New('TREPORT', 'Relatório de Pedido de Compra', /**/, {|oRel| Imprime(oRel, cAlias)}, 'Esse relatório imprimirá todos as informações de Pedido de Compra.', .F.)
+    oRel:= TReport():New('TREPORT', 'Relatório de Pedido de Compra', /**/, {|oRel| Imprime(oRel, cAlias)}, 'Esse relatório imprimirá todos as informações do Pedido de Compra.', .F.)
 
     //? Criando o objeto da seção (Retângulos dentro da folha)
-    oSection1 := TRSection():New(oRel, 'Cadastro de Pedido de Compra', /*Table*/, /*Order*/)
+    oSection1 := TRSection():New(oRel, 'Cadastro do Pedido de Compra', /*Table*/, /*Order*/)
     oSection2 := TRSection():New(oSection1, 'Itrens do Pedido de Compra', /*Table*/, /*Order*/)
 
 //? Pedidos de Compra
