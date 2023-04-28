@@ -38,6 +38,10 @@ User Function PlnCurAlu()
     TCQUERY cQuery ALIAS &(cAlias) NEW
     (cAlias)->(DbGoTop())
 
+    if(cAlias)->(EOF()) //! Caso não  haja retorno!
+        cAlias := ''
+    endif
+
     RestArea(aArea)
 
     PlanImp()
