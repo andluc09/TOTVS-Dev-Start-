@@ -1,11 +1,12 @@
 #INCLUDE 'TOTVS.CH'
 
-/*/{Protheus.doc} User Function DirCopia
-    Lista 13 - Manipulação de Arquivos | Exercício 04
+/*/{Protheus.doc} User Function DirTemp
+    Lista 13 - Manipulação de Arquivos | Challenge
     @type  Function
     @author André Lucas M. Santos
-    @since 26/04/2023
+    @since 30/04/2023
     @version 0.1
+    @see https://tdn.totvs.com/display/tec/CpyS2T
     @see https://tdn.totvs.com/display/public/framework/FWFileWriter
     @see https://tdn.totvs.com/display/public/framework/FWFileReader
     @see https://tdn.totvs.com/display/tec/ExistDir
@@ -13,9 +14,10 @@
     @see https://tdn.totvs.com/display/tec/DirRemove
     @see https://tdn.totvs.com/display/tec/Directory
     @see https://tdn.totvs.com/display/tec/FErase
+    @see https://tdn.totvs.com.br/display/tec/GetTempPath
 /*/
 
-User Function DirCopia()
+User Function CopiPDF()
 
     CriaDir()
 
@@ -25,8 +27,8 @@ Return
 
 Static Function CriaDir()
 
-    Local cCaminho   := '\'
-    Local cNomePasta := 'Lista 13'
+    Local cCaminho   := 'C:\'
+    Local cNomePasta := 'Vendas Protheus\'
     Private cDir     := cCaminho + cNomePasta
 
     if !ExistDir(cDir)
@@ -78,18 +80,18 @@ Return
 
 Static Function CopiArq()
 
-    Local cCaminho   := GetTempPath() //? Determina o diretório da pasta temporária do Windows: C:\Users\André Lucas\AppData\Local\Temp\
-    Local cNomePasta := 'Lista 13 - Exerc. 01\'
+    Local cCaminho   := '\'
+    Local cNomePasta := 'Pedidos de venda\'
     Local cPastaOrig := cCaminho + cNomePasta
-    Local cPastaDest := '\Lista 13\'
+    Local cPastaDest := 'C:\Vendas Protheus\'
     Local aArquivos  := Directory(cPastaOrig + '*.*', 'D', /*Compatibilidade*/, /**/, 1) 
     Local nI         := 0
     Local nTamanho   := LEN(aArquivos)
 
     if nTamanho > 0 
         for nI := 3 to nTamanho
-            if !CPYT2S( cPastaOrig + aArquivos[nI][1], cPastaDest) //! Copia do Terminal (Cliente) to Servidor
-                MSGSTOP('Houve um erro ao copiar o arquivo ' + aArquivos[nI][1])
+            if !CpyS2T(cPastaOrig + aArquivos[nI][1], cPastaDest, .T., .T.) //! Copia do Servidor to Terminal (Cliente)
+                FWAlertWarning('Houve um erro ao copiar o arquivo ' + aArquivos[nI][1])
             endif
         next 
             FWAlertSuccess('Arquivo(s) copiado com sucesso!', 'CONCLUÍDO')
