@@ -1,0 +1,39 @@
+
+Código do Usuário: 000000
+Nome do Usuário:   Administrador
+Função (FunName):  MATA410
+Ambiente:          ENVIRONMENT
+
+Log iniciado, data [04/05/2023] e hora [00:19:50]
+
+[00:19:53] Definindo fonte e tamanho da fonte..
+[00:19:53] Definindo caminho do arquivo como: C:\TOTVS1212210\Protheus\protheus_data\Pedidos de Venda\
+[00:19:53] Começando a página do relatório..
+[00:19:53] Iniciando cabeçalho do relatório: 
+[00:19:53] Empresa/Filial: TESTE / MATRIZ
+
+
+[00:19:53] Pedido de Venda: 
+[00:19:53] Impressão dos tópicos do cabeçalho do pedido de venda:
+[00:19:53] Nº Pedido: PV0001
+[00:19:53] Nome Cliente: CONSUMIDOR
+[00:19:53] Data Emissão: 15/03/2023
+[00:19:53] Cond. Pagamento: 1X À VISTA
+[00:19:53] Impressão dos itens do pedido de venda, os produtos:
+[00:19:53] Produto: C00007
+[00:19:53] Descrição: PELÍCULA IPHONE 13
+[00:19:53] Quantidade: 1
+[00:19:53] Preço: R$ 39,99
+[00:19:53] Valor Total: R$ 39,99
+[00:19:53] Produto: C00002
+[00:19:53] Descrição: CAPA IPHONE 13
+[00:19:53] Quantidade: 1
+[00:19:53] Preço: R$ 69,99
+[00:19:53] Valor Total: R$ 69,99
+[00:19:53] Impresão do totalizador no relatório;
+[00:19:53] Totalizador: R$ 109,98
+[00:19:53] Relatório Finalizado.
+
+Log concluído, data [04/05/2023] e hora [00:19:56]
+_______________________________________________________________________________________________________________________________________________________________________________________________
+

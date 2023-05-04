@@ -1,0 +1,49 @@
+
+Código do Usuário: 000000
+Nome do Usuário:   Administrador
+Função (FunName):  MATA410
+Ambiente:          ENVIRONMENT
+
+Log iniciado, data [04/05/2023] e hora [00:19:19]
+
+[00:19:24] Definindo fonte e tamanho da fonte..
+[00:19:25] Definindo caminho do arquivo como: C:\TOTVS1212210\Protheus\protheus_data\Pedidos de Venda\
+[00:19:25] Começando a página do relatório..
+[00:19:25] Iniciando cabeçalho do relatório: 
+[00:19:25] Empresa/Filial: TESTE / MATRIZ
+
+
+[00:19:25] Pedido de Venda: 
+[00:19:25] Impressão dos tópicos do cabeçalho do pedido de venda:
+[00:19:25] Nº Pedido: PV0002
+[00:19:25] Nome Cliente: CONSUMIDOR
+[00:19:25] Data Emissão: 15/03/2023
+[00:19:25] Cond. Pagamento: 2X 30, 60
+[00:19:25] Impressão dos itens do pedido de venda, os produtos:
+[00:19:25] Produto: C00004
+[00:19:25] Descrição: CAPA GALAXY S22
+[00:19:25] Quantidade: 1
+[00:19:25] Preço: R$ 49,99
+[00:19:25] Valor Total: R$ 49,99
+[00:19:25] Produto: C00009
+[00:19:25] Descrição: PELÍCULA GALAXY S22
+[00:19:25] Quantidade: 1
+[00:19:25] Preço: R$ 29,99
+[00:19:25] Valor Total: R$ 29,99
+[00:19:25] Produto: C00011
+[00:19:25] Descrição: CABO USB X TYPE C
+[00:19:25] Quantidade: 1
+[00:19:25] Preço: R$ 29,99
+[00:19:25] Valor Total: R$ 29,99
+[00:19:25] Produto: C00017
+[00:19:25] Descrição: SUPORTE VEICULAR PARA CELULAR
+[00:19:25] Quantidade: 1
+[00:19:25] Preço: R$ 19,99
+[00:19:25] Valor Total: R$ 19,99
+[00:19:25] Impresão do totalizador no relatório;
+[00:19:25] Totalizador: R$ 129,96
+[00:19:25] Relatório Finalizado.
+
+Log concluído, data [04/05/2023] e hora [00:19:27]
+_______________________________________________________________________________________________________________________________________________________________________________________________
+
