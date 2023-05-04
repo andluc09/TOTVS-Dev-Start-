@@ -54,7 +54,7 @@ Static Function DelPasta()
             if LEN(aArquivos) > 0
                 for nI := 3 to LEN(aArquivos)
                     if FErase(cDir + aArquivos[nI][1]) == -1
-                        MSGStop('Houve um erro ao apagar o arquivo ' + aArquivos[nI][1])
+                        FWAlertWarning('Houve um erro ao apagar o arquivo ' + aArquivos[nI][1])
                     endif
                 next
             endif
