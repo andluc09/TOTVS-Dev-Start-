@@ -13,6 +13,44 @@
 
 User Function DuoVal04()
 
+    Local nMostraDif  := 0
+    Local nMostraQuad := 0
+    Local aNums       := {0, 0}
+    Local nNum        := 0
+    Local lLoop       := .T.
 
+//*Colocar validação numérica, depois
+
+    nNum := FwInputBox('Insira aqui o primeiro número inteiro:')
+
+    while lLoop
+        if !IsDigit(nNum)
+            FwAlertError('Você não inseriu um número inteiro. Por favor, Preste atenção!')
+            nNum := FwInputBox('Insira aqui o primeiro número inteiro:')
+        else
+            aNums[1] := Val(nNum)
+            lLoop := .F.
+        endif
+    enddo
+
+    lLoop := .T.
+
+    nNum := FwInputBox('Insira aqui o segundo número inteiro:')
+
+    while lLoop
+        if !IsDigit(nNum)
+            FwAlertError('Você não inseriu um número inteiro. Por favor, Preste atenção!')
+            nNum := FwInputBox('Insira aqui o segundo número inteiro:')
+        else
+            aNums[2] := Val(nNum)
+            lLoop := .F.
+        endif
+    enddo
+
+        nMostraDif  := (aNums[1] - aNums[2])
+        nMostraQuad := (nMostraDif)^2
+
+    FwAlertSuccess('A diferença de ' + cValToChar(aNums[1]) + ' por ' + cValtoChar(aNums[2]) + ' é: ' + cValTochar(nMostraDif) + CRLF +;
+    'e o quadrado desta diferença é: ' + cValToChar(nMostraQuad), "Resultado")
 
 Return
