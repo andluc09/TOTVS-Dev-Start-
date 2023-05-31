@@ -13,6 +13,40 @@
 
 User Function SimNao17()
 
+    Local nAva1    := 0
+    Local nAva2    := 0
+    Local nMedia   := 0
+    Local cChoice  := "S"
 
+        while UPPER(cChoice) == 'S'
+        
+            nAva1 := FwInputBox('Digite a nota da primeira avaliação: ')
+                nAva1 := val(nAva1)
+
+            while (nAva1 < 0) .OR. (nAva1 > 10)
+                FwAlertError('NOTA INVÁLIDA!!', 'ERRO')
+                nAva1 := FwInputBox('Digite a nota da primeira avaliação: ')
+                    nAva1 := val(nAva1)
+
+            enddo 
+    
+            nAva2 := FwInputBox('Digite a nota da segunda avaliação: ')
+                nAva2 := val(nAva2)
+
+            while (nAva2 < 0) .OR. (nAva2 > 10)
+                FwAlertError('NOTA INVÁLIDA!!', 'ERRO')
+                nAva2 := FwInputBox('Digite a nota da segunda avaliação: ')
+                    nAva2 := val(nAva2)
+            enddo 
+
+            nMedia := (nAva1 + nAva2) / 2
+
+            FwAlertInfo('A média das avaliações é: ' + StrTran(cValToChar(nMedia),'.',','), 'VALOR MÉDIA')
+
+            cChoice := FwInputBox('NOVO CÁLCULO (S/N)? ' , cChoice)
+
+        enddo 
+
+        FwAlertSuccess('Médias calculadas com sucesso! ', 'CONCLUÍDO')
 
 Return

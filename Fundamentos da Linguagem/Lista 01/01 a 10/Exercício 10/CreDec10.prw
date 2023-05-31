@@ -18,7 +18,6 @@ User Function CreDec10()
     Local nNum      := 0
     Local cResult := ''
 
-
 //*Colocar validação isDigit sem NEGATIVO, depois
 
     for nNum := 1 to 3

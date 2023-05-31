@@ -13,6 +13,15 @@
 
 User Function ImpInt20()
 
+	Local nNum  := 101
+    Local nCont := 1
 
+	while nNum <= 110
+		FwAlertInfo(cValToChar(nNum), 'Número da contagem ' + cValToChar(nCont) + 'º:')
+		nNum++
+        nCont++
+	enddo
+
+    FwAlertSuccess('Contagem finalizada!')
 
 Return

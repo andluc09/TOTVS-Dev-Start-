@@ -13,13 +13,34 @@
 
 User Function Produt13()
 
-    Local cNome  := ''
-    Local cValor := ''
-    Local cQuant := ''
-    Local nTotal := 0
+    Local cNome   := ''
+    Local cValor  := ''
+    Local cQuant  := ''
+    Local nTotal  := 0
+    Local nTotalD := 0
+
+//*Colocar validação isDigit sem NEGATIVO, depois
 
     cNome  := FwInputBox('Insira o nome do produto adquirido:', cNome)
     cValor := FwInputBox('Insira o valor unitário do produto:', cValor)
     cQuant := FwInputBox('Insira a quantidade deste produto adquirido:', cQuant)
+
+    if VAL(cQuant) <= 5
+        nTotal := VAL(cQuant) * VAL(cValor)
+        nDesct := (nTotal * (2/100))
+        nTotalD := nTotal - nDesct
+    elseif VAL(cQuant) > 5 .AND. VAL(cQuant)  <= 10
+        nTotal := VAL(cQuant) * VAL(cValor)
+        nDesct := (nTotal * (3/100))
+        nTotalD := nTotal - nDesct
+    else 
+        nTotal := VAL(cQuant) * VAL(cValor)
+        nDesct := (nTotal * (5/100))
+        nTotalD := nTotal - nDesct
+    endif
+
+    FWAlertInfo(" O valor total: R$ " + StrTran(cValToChar(nTotal),'.',',') + CRLF + CRLF +;
+    "O valor do desconto: R$ " + StrTran(cValToChar(nDesct),'.',',') + CRLF + CRLF +;
+    "O valor a pagar: R$ " + StrTran(cValToChar(nTotalD),'.',','), 'Produto adquirido: ' + cNome)
 
 Return

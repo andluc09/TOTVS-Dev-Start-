@@ -13,6 +13,15 @@
 
 User Function OrdDec19()
 
+	Local nNum  := 10
+    Local nCont := 1
 
+	while nNum >= 1
+		FwAlertInfo(cValToChar(nNum), 'Número da contagem ' + cValToChar(nCont) + 'º:')
+		nNum--
+        nCont++
+	enddo
+
+    FwAlertSuccess('Contagem finalizada!')
 
 Return

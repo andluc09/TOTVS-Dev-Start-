@@ -21,6 +21,8 @@ User Function LadTri11()
     Local cLadoC := ""
     Local lVerdade := .F.
 
+//*Colocar validação isDigit sem NEGATIVO, depois
+
     FWAlertInfo(' Insira três valores para cada lado de um triângulo. ','')
 
     while (lVerdade != .T.)

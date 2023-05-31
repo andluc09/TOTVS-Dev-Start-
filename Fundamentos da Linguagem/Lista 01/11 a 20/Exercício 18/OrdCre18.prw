@@ -13,6 +13,13 @@
 
 User Function OrdCre18()
 
+	Local nNum := 1
 
+	while nNum <= 10
+		FwAlertInfo(cValToChar(nNum), 'Número da contagem ' + cValToChar(nNum) + 'º:')
+		nNum++
+	enddo
+
+    FwAlertSuccess('Contagem finalizada!')
 
 Return

@@ -18,6 +18,8 @@ User Function FotWin12()
     Local cP1    := ''
     Local cP2    := ''
 
+//*Colocar validação isDigit sem NEGATIVO, depois
+
     cTime1 := FwInputBox('Digite aqui o nome do primeiro time:', cTime1)
     cP1 := FwInputBox('Digite aqui os pontos do primeiro time:', cP1)
 

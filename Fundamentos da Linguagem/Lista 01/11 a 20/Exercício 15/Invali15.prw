@@ -13,6 +13,30 @@
 
 User Function Invali15()
 
+    Local cNum   := ''
+    Local nNum1  := 0
+    Local nNum2  := 0
+    Local nDiv   := 0
+    Local lLoop  := .T.
 
+//*Colocar validação isDigit sem NEGATIVO, depois
 
-Return
+    cNum := FwInputBox('Digite o primeiro número: ', cNum)
+    nNum1 := val(cNum)
+
+    while lLoop
+        cNum := FwInputBox("Digite o segundo número: ", cNum)
+
+        if VAL(cNum) == 0
+            FWAlertError('Não é possível dividir por zero!!', 'VALOR INVÁLIDO')
+        else
+            nNum2 := VAL(cNum)
+            lLoop := .F.
+        endif
+    enddo
+
+    nDiv := nNum1 / nNum2 
+
+    FwAlertInfo(cvaltochar(nNum1) + " / " + cvaltochar(nNum2) + " = " + StrTran(cvaltochar(nDiv), '.', ','), "Divisão, resultado:")
+
+Return 
