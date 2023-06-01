@@ -13,6 +13,24 @@
 
 User Function Tabu22()
 
+	Local cValor  := ''
+    Local nI      := 0
+    Local cResult := ''
 
+//* Tratamento numérico
+
+	cValor := FwInputBox('Digite um valor inteiro entre 1 e 10:')
+    cValor := VAL(cValor)
+
+	while cValor < 1 .OR. cValor > 10
+		cValor := FwInputBox('Valor inválido. Digite um valor inteiro entre 1 e 10:')
+        cValor := VAL(cValor)
+	enddo
+
+	for nI := 1 to 10
+		cResult += Alltrim(STR(cValor)) + ' x ' + Alltrim(STR(nI)) + ' = ' + Alltrim(STR(cValor * nI)) + CRLF + CRLF
+	next
+
+	FwAlertSuccess(cResult, 'Tabuada do: ' + cValToChar(cValor))
 
 Return

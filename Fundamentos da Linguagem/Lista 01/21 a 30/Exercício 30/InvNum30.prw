@@ -13,6 +13,26 @@
 
 User Function InvNum30()
 
+    Local nNumero := 0
+    Local nI      := 0
+    Local cMostra := ''
+    Local aArray1 := {}
 
+//* Tratamento numérico
+
+    for nI := 1 to 10
+        nNumero := VAL(FwInputBox('Digite aqui o ' + AllTrim(STR(nI)) + 'º número do array: '))
+        AADD(aArray1, nNumero)
+    next
+
+    for nI := 10 to 1 Step-1
+        if nI != 1
+            cMostra += (Alltrim(STR(aArray1[nI])) + ',')
+        else
+            cMostra += (Alltrim(STR(aArray1[nI])) + '.')
+        endif
+    next
+
+    FwAlertSuccess('Vetor resultante com os números na ordem inversa é: ' + cMostra)
 
 Return

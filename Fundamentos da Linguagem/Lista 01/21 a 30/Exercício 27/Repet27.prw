@@ -13,6 +13,24 @@
 
 User Function Repet27()
 
+    Local nI      := 1
+    Local nJ      := 1
+    Local cResult := ''
+    Local cLinha  := ''
 
+    for nI := 1 to 10
+        cLinha := ''
+        cLinha += alltrim(Str(nI)) + ', '
+        for nJ := 1 to 10
+            if nJ < 10
+                cLinha += alltrim(Str(nJ)) + ' '
+            else
+                cLinha += alltrim(Str(nJ)) + '. '   
+            endif    
+        next
+        cResult += cLinha + CRLF  
+    next        
+
+    FwAlertInfo('Resultado:' + CRLF + CRLF + cResult, 'SEQUÊNCIA NUMÉRICA')
 
 Return

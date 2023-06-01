@@ -13,6 +13,18 @@
 
 User Function M18Ida38()
 
+    Local nIdade := 0
+    Local nMaior := 0
+    Local nI     := 0
 
+    for nI := 1 to 10
+        nIdade := val(FwInputBox("Digite a idade da " + cvaltochar(nI) + "ª pessoa."))
 
-Return
+        if nIdade >= 18
+            nMaior++
+        endif
+    next
+
+    FwAlertSuccess('<b>' + cvaltochar(nMaior) + " pessoa (as)</b> são maiores de idade.", 'MAIOR DE IDADE')
+
+Return 

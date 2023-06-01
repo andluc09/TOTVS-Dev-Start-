@@ -17,6 +17,8 @@ User Function Trig02()
     local cAltura   := ''
     local nArea     := 0
 
+//* Tratamento numérico, tratar negativo
+
     cBase := FwInputBox('Digite o tamanho da base do retângulo em centímetros', cBase)
 
     if !NEGATIVO(VAL(cBase)) 

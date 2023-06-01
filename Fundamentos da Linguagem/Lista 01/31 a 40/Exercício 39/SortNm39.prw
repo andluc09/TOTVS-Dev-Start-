@@ -13,6 +13,13 @@
 
 User Function SortNm39()
 
+    Local aNomes := {'André','Tamíris','Matheus Pintor','Edison','Daniele','Giulliana','Gabriela','Ruan','Quirino','João Pedro','Gustavo Favero',;
+                        'Natan', 'Ruan', 'Stephani','Henrique','Lucas','Fábio', 'Gustavo Cabral', 'Muriel'}
 
+    Local nSort  := 0
+
+    nSort := RANDOMIZE(1 , LEN(aNomes))
+
+    FwAlertSuccess('O sorteado é o(a): ' + aNomes[nSort], 'SELECIONADO')
 
 Return

@@ -17,6 +17,8 @@ User Function MedAlu16()
     Local nAva2    := 0
     Local nMedia   := 0
 
+//*Colocar validação isDigit sem NEGATIVO, depois
+
     nAva1 := FwInputBox('Digite a nota da primeira avaliação: ')
         nAva1 := val(nAva1)
 

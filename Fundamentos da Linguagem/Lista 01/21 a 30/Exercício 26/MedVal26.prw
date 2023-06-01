@@ -13,6 +13,17 @@
 
 User Function MedVal26()
 
+	Local nSoma  := 0
+	Local nQuant := 0
+    Local nI     := 0
 
+	for nI := 15 to 100
+		nSoma += nI
+		nQuant++
+	next
+
+	nMedia := nSoma / nQuant
+
+	FwAlertSuccess('A média aritmética dos números entre 15 e 100 é: ' + StrTran(cValToChar(nMedia), '.', ','), 'MÉDIA ARITMÉTICA')
 
 Return

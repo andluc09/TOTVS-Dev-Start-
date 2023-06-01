@@ -13,6 +13,23 @@
 
 User Function NomArr28()
 
+    Local aNomes := {}
+    Local cNome  := ''
+    Local cFind  := ''
+    Local nI     := 1
 
+    for nI := 1 to 10
+        cNome := FwInputBox('Digite o nome que será armazenado: ', cNome)
+        aADD(aNomes,UPPER(cNome))
+        cNome := ''
+    next
+
+    cFind := FwInputBox('Digite um nome para pesquisar: ', cFind)
+
+    if aScan(aNomes, UPPER(cFind)) != 0
+        FwAlertSuccess('ACHEI!', 'RESULTADO')
+    else
+        FwAlertError('NÃO ACHEI..', 'RESULTADO')
+    endif
 
 Return

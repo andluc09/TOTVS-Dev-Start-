@@ -13,6 +13,19 @@
 
 User Function ValNeg23()
 
+	Local cValor     := ''
+	Local nNegativos := 0
+    Local nI         := 0
 
+//* Tratamento numérico, não tratar negativo
+
+	for nI := 1 to 10
+		cValor := FwInputBox('Digite o ' + cValToChar(nI) + 'º valor: ', cValor)
+		if VAL(cValor) < 0
+			nNegativos++
+		endif
+	next
+
+	FwAlertSuccess('Foram digitados ' + cValToChar(nNegativos) + ' valores negativos.', 'RESULTADO')
 
 Return

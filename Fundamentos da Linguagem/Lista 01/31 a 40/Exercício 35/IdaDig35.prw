@@ -13,6 +13,24 @@
 
 User Function IdaDig35()
 
+    Local nIdade := -1
+    Local nMedia := 0
+    Local nSoma  := 0
+    Local nI     := 0
 
+//*Colocar validação isDigit sem NEGATIVO, depois
+
+    while nIdade <> 0
+        nIdade := VAL(FwInputBox('Digite a idade da pessoa ou 0 para finalizar: ', 'IDADES')) 
+        
+        if nIdade <> 0
+            nSoma += nIdade
+            nI++
+        endif
+    enddo
+
+    nMedia := nSoma / nI
+
+    FwAlertSuccess('A média da idade das pessoas é: ' + StrTran(cValToChar(nMedia), '.', ',') + ' anos.', 'MÉDIA')
 
 Return

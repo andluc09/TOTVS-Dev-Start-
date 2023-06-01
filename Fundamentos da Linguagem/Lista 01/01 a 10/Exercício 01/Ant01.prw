@@ -17,6 +17,8 @@ User Function Ant01()
     Local cAux := ''
     Local nNum := 0
 
+//* Tratamento numérico, tratar negativo
+
     cNum := FwInputBox('Insira um número para saber o seu antecessor?', cNum)
 
     cAux := cNum  

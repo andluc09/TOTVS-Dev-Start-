@@ -18,6 +18,8 @@ User Function Idad03()
     Local cDias  := ''
     Local nIdade := 0
 
+//* Tratamento numérico, tratar negativo
+
     cAnos := FwInputBox('Digite aqui há quantos anos você nasceu:', cAnos)
 
     if !NEGATIVO(VAL(cAnos))

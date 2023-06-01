@@ -13,6 +13,24 @@
 
 User Function Fatori36()
 
+    Local nNum    := 0
+    Local nI      := 0
+    Local nResult := 0
 
+//*Colocar validação isDigit sem NEGATIVO, depois
+
+    nNum := Val(FwInputBox('Digite aqui um número para saber seu fatorial: ')) 
+
+    nResult := VAL(StrTran(cValToChar(nNum), ',', '.'))
+
+    for nI := nNUm to 2 step -1
+        nResult := nResult * (nI-1)
+    next
+
+    if nNum == 0
+        FwAlertSuccess('O resultado de ' + StrTran(cValToChar(nNum), '.', ',') + '! é: 1', 'FATORIAL')
+    else 
+        FwAlertSuccess('O resultado de ' + StrTran(cValToChar(nNum), '.', ',') + '! é: ' + StrTran(cValToChar(nResult), '.', ','), 'FATORIAL')
+    endif
 
 Return

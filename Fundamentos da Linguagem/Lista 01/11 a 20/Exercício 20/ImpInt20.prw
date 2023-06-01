@@ -22,6 +22,6 @@ User Function ImpInt20()
         nCont++
 	enddo
 
-    FwAlertSuccess('Contagem finalizada!')
+    FwAlertSuccess('Contagem finalizada!', 'FIM')
 
 Return
