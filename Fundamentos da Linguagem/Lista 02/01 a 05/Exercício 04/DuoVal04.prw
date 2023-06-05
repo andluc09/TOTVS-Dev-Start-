@@ -1,7 +1,7 @@
 #INCLUDE 'TOTVS.CH'
 
 /*/{Protheus.doc} User Function DuoVal04
-    Lista 01 - Fundamentos da Linguagem ADVPL | Exercício 04
+    Lista 02 - Fundamentos da Linguagem ADVPL | Exercício 04
     @type  Function
     @author André Lucas M. Santos
     @since 05/04/2023

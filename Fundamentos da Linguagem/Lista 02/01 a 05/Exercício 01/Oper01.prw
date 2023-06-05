@@ -1,7 +1,7 @@
 #INCLUDE 'TOTVS.CH'
 
 /*/{Protheus.doc} User Function Oper01
-    Lista 01 - Fundamentos da Linguagem ADVPL | Exercício 01
+    Lista 02 - Fundamentos da Linguagem ADVPL | Exercício 01
     @type  Function
     @author André Lucas M. Santos
     @since 05/04/2023

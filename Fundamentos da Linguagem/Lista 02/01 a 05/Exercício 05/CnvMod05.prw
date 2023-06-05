@@ -1,7 +1,7 @@
 #INCLUDE 'TOTVS.CH'
 
 /*/{Protheus.doc} User Function CnvMod05
-    Lista 01 - Fundamentos da Linguagem ADVPL | Exercício 05
+    Lista 02 - Fundamentos da Linguagem ADVPL | Exercício 05
     @type  Function
     @author André Lucas M. Santos
     @since 05/04/2023

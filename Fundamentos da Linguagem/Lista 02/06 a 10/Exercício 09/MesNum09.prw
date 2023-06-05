@@ -1,7 +1,7 @@
 #INCLUDE 'TOTVS.CH'
 
 /*/{Protheus.doc} User Function MesNum09
-    Lista 01 - Fundamentos da Linguagem ADVPL | Exercício 09
+    Lista 02 - Fundamentos da Linguagem ADVPL | Exercício 09
     @type  Function
     @author André Lucas M. Santos
     @since 05/04/2023
